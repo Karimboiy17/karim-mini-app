@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1150" viewBox="0 0 900 1150">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#22d3ee" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#0b0d10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#252c36"/>
+      <stop offset="55%" stop-color="#171c23"/>
+      <stop offset="100%" stop-color="#10141a"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2029"/>
+      <stop offset="100%" stop-color="#0f1319"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1150" fill="#0b0d10"/>
+  <rect width="900" height="1150" fill="url(#glow)"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="450" cy="985" rx="230" ry="26" fill="#000" opacity="0.55" filter="url(#blur)"/>
+
+  <!-- wings (right, mirrored to left) -->
+  <g stroke="url(#wing)" stroke-linecap="round" fill="none">
+    <path d="M600,432 C690,392 772,372 846,344" stroke-width="11"/>
+    <path d="M606,462 C704,430 786,414 858,392" stroke-width="9"/>
+    <path d="M612,492 C700,470 776,458 842,442" stroke-width="7"/>
+    <path d="M618,520 C696,506 760,498 818,488" stroke-width="5"/>
+  </g>
+  <g transform="translate(900,0) scale(-1,1)" stroke="url(#wing)" stroke-linecap="round" fill="none">
+    <path d="M600,432 C690,392 772,372 846,344" stroke-width="11"/>
+    <path d="M606,462 C704,430 786,414 858,392" stroke-width="9"/>
+    <path d="M612,492 C700,470 776,458 842,442" stroke-width="7"/>
+    <path d="M618,520 C696,506 760,498 818,488" stroke-width="5"/>
+  </g>
+
+  <!-- antenna -->
+  <line x1="450" y1="350" x2="450" y2="322" stroke="#2b333d" stroke-width="4"/>
+  <circle cx="450" cy="316" r="12" fill="#22d3ee" opacity="0.35" filter="url(#blur)"/>
+  <circle cx="450" cy="316" r="7" fill="#67e8f9"/>
+
+  <!-- helmet -->
+  <circle cx="450" cy="478" r="138" fill="url(#metal)" stroke="#39414d" stroke-width="2.5"/>
+  <path d="M312,470 C312,360 588,360 588,470" fill="none" stroke="#2f3742" stroke-width="3"/>
+
+  <!-- visor -->
+  <rect x="332" y="438" width="236" height="84" rx="42" fill="#0a1014" stroke="#2b333d" stroke-width="2"/>
+  <rect x="334" y="440" width="232" height="80" rx="40" fill="url(#visor)" opacity="0.22"/>
+  <rect x="334" y="440" width="232" height="80" rx="40" fill="url(#visor)" opacity="0.9" filter="url(#soft)"/>
+  <g opacity="0.28" fill="#061014">
+    <rect x="344" y="452" width="212" height="2.5" rx="1"/>
+    <rect x="344" y="464" width="212" height="2.5" rx="1"/>
+    <rect x="344" y="476" width="212" height="2.5" rx="1"/>
+    <rect x="344" y="488" width="212" height="2.5" rx="1"/>
+    <rect x="344" y="500" width="212" height="2.5" rx="1"/>
+  </g>
+  <!-- eyes -->
+  <circle cx="404" cy="480" r="9" fill="#041014" opacity="0.85"/>
+  <circle cx="496" cy="480" r="9" fill="#041014" opacity="0.85"/>
+
+  <!-- cheeks / jaw -->
+  <path d="M372,556 C400,600 500,600 528,556" fill="none" stroke="#2c343f" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- shoulders -->
+  <path d="M300,1010 C310,860 360,800 450,800 C540,800 590,860 600,1010 Z" fill="url(#body)" stroke="#2a323c" stroke-width="2.5"/>
+  <path d="M402,806 L450,880 L498,806" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.55"/>
+  <circle cx="450" cy="892" r="9" fill="#22d3ee" opacity="0.9"/>
+  <path d="M450,901 L450,1010" stroke="#22d3ee" stroke-width="2" opacity="0.25"/>
+
+  <!-- circuit lines on shoulders -->
+  <g stroke="#22d3ee" stroke-width="1.6" opacity="0.28" fill="none">
+    <path d="M336,880 L380,880 L392,864"/>
+    <path d="M564,880 L520,880 L508,864"/>
+    <path d="M330,930 L382,930"/>
+    <path d="M570,930 L518,930"/>
+  </g>
+  <g fill="#22d3ee" opacity="0.55">
+    <circle cx="380" cy="880" r="3.5"/><circle cx="520" cy="880" r="3.5"/>
+    <circle cx="382" cy="930" r="3.5"/><circle cx="518" cy="930" r="3.5"/>
+  </g>
+
+  <!-- tool chips -->
+  <g font-family="'SF Mono',Menlo,monospace" font-size="15" fill="#9aa3b0">
+    <rect x="86" y="250" width="122" height="36" rx="10" fill="#12161c" stroke="#252c35"/>
+    <text x="102" y="273">terminal</text>
+
+    <rect x="692" y="250" width="122" height="36" rx="10" fill="#12161c" stroke="#252c35"/>
+    <text x="708" y="273">browser</text>
+
+    <rect x="86" y="640" width="112" height="36" rx="10" fill="#12161c" stroke="#252c35"/>
+    <text x="102" y="663">memory</text>
+
+    <rect x="702" y="640" width="112" height="36" rx="10" fill="#12161c" stroke="#252c35"/>
+    <text x="718" y="663">cron</text>
+  </g>
+  <g stroke="#22d3ee" stroke-width="1.2" opacity="0.25" fill="none">
+    <path d="M208,268 L300,300"/>
+    <path d="M692,268 L600,300"/>
+    <path d="M198,658 L300,640"/>
+    <path d="M702,658 L600,640"/>
+  </g>
+
+  <!-- caption -->
+  <text x="450" y="1072" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="700" fill="#eef1f5" letter-spacing="3">HERMES AGENT</text>
+  <text x="450" y="1102" text-anchor="middle" font-family="'SF Mono',Menlo,monospace" font-size="14" fill="#6f7885">deepseek-v4-flash · macOS · Telegram</text>
+</svg>
