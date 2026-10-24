@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kitoblar ombori — filial zakazlari</title>
 <link rel="stylesheet" href="../style.css?v=4">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="../assets/tg.js"></script>
 </head>
 <body>
 <header class="top">
@@ -103,7 +105,7 @@ function render(){
 
 async function load(){
   try{
-    const r = await fetch(API, {cache:"no-store"});
+    const r = await tgFetch(API, {cache:"no-store"});
     if(!r.ok) throw new Error(r.status);
     const j = await r.json();
     DATA = j.branches.map(b=>({
