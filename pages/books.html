@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kitoblar ombori — filial zakazlari</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Kitoblar ombori</h1>
+  <span class="sub">filial zakazlari · darajalar kesimida</span>
+  <span class="spacer"></span>
+  <a class="back" href="../index.html">← hammasi</a>
+</header>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="chips" id="chips"></div>
+
+<div class="tablewrap">
+  <table class="books" id="tbl">
+    <thead>
+      <tr>
+        <th class="stick">Filial</th>
+        <th>A1</th><th>A2</th><th>B1</th><th>B1+</th>
+        <th>Novice</th><th>IELTS Standard</th><th>Copybook</th>
+        <th>Jami</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+<p class="note">Har katak: <b>qoldiq</b> / <span class="ord">zakazda</span>. Jadval telefonda yon tomonga suriladi.</p>
+
+<h2 class="sect">Oxirgi zakazlar</h2>
+<div class="orders" id="orders"></div>
+
+<p class="note">Hozircha namuna ma’lumot — bot bazasi ulanmagani uchun sonlar test uchun. Baza to‘lgach shu sahifa o‘zi yangilanadi.</p>
+
+<script>
+const LEVELS = ["A1","A2","B1","B1+","Novice","IELTS Standard","Copybook"];
+
+const DATA = [
+  { branch:"Integro A", stock:[120,95,80,45,60,70,200], ordered:[40,30,25,20,0,15,50] },
+  { branch:"Integro B", stock:[60,55,40,25,30,35,120],  ordered:[20,15,10,10,0,10,30] },
+  { branch:"Drujba",    stock:[75,70,50,30,40,45,150],  ordered:[25,20,15,10,5,10,40] },
+  { branch:"Amir Temur 3-etaj", stock:[90,85,60,35,45,55,160], ordered:[30,25,20,15,0,10,35] },
+  { branch:"Amir Temur 1-etaj", stock:[50,45,35,20,25,30,100], ordered:[15,10,10,5,0,5,25] }
+];
+
+const ORDERS = [
+  { date:"24-okt", branch:"Integro A",  items:"A1 ×40, B1+ ×20",  status:"yangi" },
+  { date:"24-okt", branch:"Drujba",     items:"Copybook ×40",     status:"yangi" },
+  { date:"23-okt", branch:"Integro B",  items:"A2 ×15, B1 ×10",   status:"yo‘lda" },
+  { date:"23-okt", branch:"Amir Temur 3-etaj", items:"A1 ×30, Novice ×10", status:"yo‘lda" },
+  { date:"22-okt", branch:"Amir Temur 1-etaj", items:"IELTS Standard ×5", status:"qabul qilindi" },
+  { date:"21-okt", branch:"Drujba",     items:"B1+ ×10, Copybook ×20", status:"qabul qilindi" }
+];
+
+const sum = a => a.reduce((x,y)=>x+y,0);
+const fmt = n => n.toLocaleString("ru-RU");
+
+function kpis(){
+  const stock = sum(DATA.flatMap(d=>d.stock));
+  const ord   = sum(DATA.flatMap(d=>d.ordered));
+  const open  = ORDERS.filter(o=>o.status!=="qabul qilindi").length;
+  const html = [
+    ["Ombordagi kitob", fmt(stock)],
+    ["Zakazda", fmt(ord)],
+    ["Ochiq zakaz", open + " ta"],
+    ["Filial", DATA.length + " ta"]
+  ].map(([k,v])=>`<div class="kpi"><span>${k}</span><b>${v}</b></div>`).join("");
+  document.getElementById("kpis").innerHTML = html;
+}
+
+function rows(filter){
+  const list = filter==="all" ? DATA : DATA.filter(d=>d.branch===filter);
+  document.getElementById("rows").innerHTML = list.map(d=>{
+    const cells = d.stock.map((s,i)=>{
+      const o = d.ordered[i];
+      return `<td><span class="${s===0?'zero':''}">${s}</span><i class="ord">/${o}</i></td>`;
+    }).join("");
+    return `<tr><th class="stick">${d.branch}</th>${cells}<td class="tot">${sum(d.stock)}</td></tr>`;
+  }).join("");
+}
+
+function chips(){
+  const all = ["all", ...DATA.map(d=>d.branch)];
+  document.getElementById("chips").innerHTML = all.map((b,i)=>
+    `<button class="chip${i===0?' on':''}" data-b="${b}">${b==="all"?"Barchasi":b}</button>`
+  ).join("");
+  document.querySelectorAll(".chip").forEach(btn=>btn.onclick=()=>{
+    document.querySelectorAll(".chip").forEach(b=>b.classList.remove("on"));
+    btn.classList.add("on");
+    rows(btn.dataset.b);
+  });
+}
+
+function orders(){
+  document.getElementById("orders").innerHTML = ORDERS.map(o=>`
+    <div class="order">
+      <div class="od-top"><b>${o.branch}</b><span class="st ${o.status==='yangi'?'new':o.status==='yo‘lda'?'way':'done'}">${o.status}</span></div>
+      <div class="od-items">${o.items}</div>
+      <div class="od-date">${o.date}</div>
+    </div>`).join("");
+}
+
+kpis(); chips(); rows("all"); orders();
+</script>
+</body>
+</html>

@@ -1,5 +1,13 @@
 [
   {
+    "id": "books",
+    "date": "2026-10-24",
+    "title": "Kitoblar ombori — filial zakazlari",
+    "subtitle": "5 filial · 7 daraja",
+    "image": "assets/books.svg",
+    "page": "pages/books.html"
+  },
+  {
     "id": "portrait",
     "date": "2026-10-25",
     "title": "O‘z portretim",
