@@ -181,7 +181,7 @@ a { color: var(--accent); text-decoration: none; }
   gap: 2px;
 }
 .kpi span { color: var(--dim); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; }
-.kpi b { font-size: clamp(18px, 2.4vw, 24px); font-weight: 700; }
+.kpi b { font-size: clamp(18px, 2.4vw, 24px); font-weight: 700; white-space: nowrap; }
 
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .chip {
