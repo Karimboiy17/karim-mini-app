@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1900" viewBox="0 0 1400 1900">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3a4150"/>
+    </marker>
+    <style>
+      .bg{fill:#0d0f12}
+      .box{fill:#16191f;stroke:#272c35;stroke-width:1.5}
+      .boxg{fill:#12251a;stroke:#22c55e;stroke-width:1.5}
+      .boxb{fill:#111d2c;stroke:#3b82f6;stroke-width:1.5}
+      .t{fill:#e8eaee;font-family:'Helvetica Neue',Arial,sans-serif;font-size:21px;font-weight:600}
+      .s{fill:#8b929e;font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px}
+      .n{fill:#22c55e;font-family:'SF Mono',Menlo,monospace;font-size:14px;letter-spacing:1px}
+      .l{stroke:#3a4150;stroke-width:2;fill:none;marker-end:url(#ar)}
+      .ttl{fill:#f2f4f7;font-family:'Helvetica Neue',Arial,sans-serif;font-size:34px;font-weight:700}
+      .sub{fill:#8b929e;font-family:'Helvetica Neue',Arial,sans-serif;font-size:17px}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1400" height="1900"/>
+
+  <text class="ttl" x="90" y="70">Maintenance Bot — ishlash tartibi</text>
+  <text class="sub" x="90" y="100">@tmtzone_bot · Telegram → bot → baza</text>
+
+  <!-- main flow -->
+  <rect class="box" x="470" y="140" width="460" height="86" rx="12"/>
+  <text class="n" x="492" y="168">01</text>
+  <text class="t" x="492" y="196">Hodim /start bosadi</text>
+  <text class="s" x="492" y="216">Telegram’da botga kiradi</text>
+
+  <line class="l" x1="700" y1="226" x2="700" y2="266"/>
+
+  <rect class="box" x="470" y="270" width="460" height="86" rx="12"/>
+  <text class="n" x="492" y="298">02</text>
+  <text class="t" x="492" y="326">Ismini yozadi</text>
+  <text class="s" x="492" y="346">Bot ro‘yxatga oladi</text>
+
+  <line class="l" x1="700" y1="356" x2="700" y2="396"/>
+
+  <rect class="box" x="470" y="400" width="460" height="86" rx="12"/>
+  <text class="n" x="492" y="428">03</text>
+  <text class="t" x="492" y="456">Rolni tanlaydi</text>
+  <text class="s" x="492" y="476">👷 Hodim  yoki  📝 Staff</text>
+
+  <line class="l" x1="700" y1="486" x2="700" y2="526"/>
+
+  <rect class="boxb" x="470" y="530" width="460" height="86" rx="12"/>
+  <text class="n" x="492" y="558">04</text>
+  <text class="t" x="492" y="586">Tasdiq so‘rovi — menejerga</text>
+  <text class="s" x="492" y="606">✅ Tasdiqlash  /  ❌ Rad etish</text>
+
+  <line class="l" x1="700" y1="616" x2="700" y2="656"/>
+
+  <rect class="box" x="470" y="660" width="460" height="86" rx="12"/>
+  <text class="n" x="492" y="688">05</text>
+  <text class="t" x="492" y="716">Filial va smena tanlanadi</text>
+  <text class="s" x="492" y="736">Ertalabki / tushdan keyingi</text>
+
+  <line class="l" x1="700" y1="746" x2="700" y2="786"/>
+
+  <rect class="boxg" x="470" y="790" width="460" height="86" rx="12"/>
+  <text class="n" x="492" y="818">06</text>
+  <text class="t" x="492" y="846">Ish menyusi ochiladi</text>
+  <text class="s" x="492" y="866">Kundalik ish shu yerdan boshlanadi</text>
+
+  <!-- branch -->
+  <path class="l" d="M700,876 L700,930"/>
+  <path class="l" d="M280,930 L1120,930"/>
+  <path class="l" d="M280,930 L280,960"/>
+  <path class="l" d="M700,930 L700,960"/>
+  <path class="l" d="M1120,930 L1120,960"/>
+
+  <!-- column 1: attendance -->
+  <rect class="boxg" x="90" y="960" width="380" height="80" rx="12"/>
+  <text class="t" x="112" y="994">💼 Ishga keldim</text>
+  <text class="s" x="112" y="1018">va 🚪 Ishdan ketdim</text>
+
+  <line class="l" x1="280" y1="1040" x2="280" y2="1080"/>
+  <rect class="box" x="90" y="1084" width="380" height="80" rx="12"/>
+  <text class="t" x="112" y="1118">Doira video yuboradi</text>
+  <text class="s" x="112" y="1142">video-note, jonli tasdiq</text>
+
+  <line class="l" x1="280" y1="1164" x2="280" y2="1204"/>
+  <rect class="box" x="90" y="1208" width="380" height="80" rx="12"/>
+  <text class="t" x="112" y="1242">Vaqt yoziladi</text>
+  <text class="s" x="112" y="1266">Davomat varag‘iga tushadi</text>
+
+  <line class="l" x1="280" y1="1288" x2="280" y2="1328"/>
+  <rect class="box" x="90" y="1332" width="380" height="80" rx="12"/>
+  <text class="t" x="112" y="1366">Ish guruhiga yuboriladi</text>
+  <text class="s" x="112" y="1390">menejer ko‘radi</text>
+
+  <!-- column 2: tasks -->
+  <rect class="boxb" x="510" y="960" width="380" height="80" rx="12"/>
+  <text class="t" x="532" y="994">📋 Vazifalar</text>
+  <text class="s" x="532" y="1018">menejer bergan ishlar</text>
+
+  <line class="l" x1="700" y1="1040" x2="700" y2="1080"/>
+  <rect class="box" x="510" y="1084" width="380" height="80" rx="12"/>
+  <text class="t" x="532" y="1118">Bajaradi va isbot yuboradi</text>
+  <text class="s" x="532" y="1142">rasm / video / matn</text>
+
+  <line class="l" x1="700" y1="1164" x2="700" y2="1204"/>
+  <rect class="box" x="510" y="1208" width="380" height="80" rx="12"/>
+  <text class="t" x="532" y="1242">Menejer tasdiqlaydi</text>
+  <text class="s" x="532" y="1266">qabul / rad</text>
+
+  <line class="l" x1="700" y1="1288" x2="700" y2="1328"/>
+  <rect class="box" x="510" y="1332" width="380" height="80" rx="12"/>
+  <text class="t" x="532" y="1366">Vazifa yopiladi</text>
+  <text class="s" x="532" y="1390">tarixda qoladi</text>
+
+  <!-- column 3: ranking -->
+  <rect class="box" x="930" y="960" width="380" height="80" rx="12"/>
+  <text class="t" x="952" y="994">🏆 Reyting</text>
+  <text class="s" x="952" y="1018">avtomatik hisoblanadi</text>
+
+  <line class="l" x1="1120" y1="1040" x2="1120" y2="1080"/>
+  <rect class="box" x="930" y="1084" width="380" height="80" rx="12"/>
+  <text class="t" x="952" y="1118">Ball = davomat + task</text>
+  <text class="s" x="952" y="1142">kechikish hisobga olinadi</text>
+
+  <line class="l" x1="1120" y1="1164" x2="1120" y2="1204"/>
+  <rect class="box" x="930" y="1208" width="380" height="80" rx="12"/>
+  <text class="t" x="952" y="1242">Bugungi / umumiy</text>
+  <text class="s" x="952" y="1266">ikki ko‘rinish</text>
+
+  <line class="l" x1="1120" y1="1288" x2="1120" y2="1328"/>
+  <rect class="box" x="930" y="1332" width="380" height="80" rx="12"/>
+  <text class="t" x="952" y="1366">Eng yaxshi hodim</text>
+  <text class="s" x="952" y="1390">kunlik natija</text>
+
+  <!-- storage bar -->
+  <path class="l" d="M280,1412 L280,1444 L700,1444"/>
+  <path class="l" d="M700,1412 L700,1444"/>
+  <path class="l" d="M1120,1412 L1120,1444 L700,1444"/>
+  <path class="l" d="M700,1444 L700,1468"/>
+
+  <rect class="boxb" x="90" y="1470" width="1220" height="104" rx="14"/>
+  <text class="t" x="112" y="1508">Postgres baza — barcha yozuvlar shu yerda</text>
+  <text class="s" x="112" y="1534">users · tasks · attendance · ranking · advices · room_photos</text>
+  <text class="s" x="112" y="1556">Bot yozadi, dashboard faqat o‘qiydi. Google Sheets — zaxira variant.</text>
+
+  <!-- legend cards -->
+  <rect class="box" x="90" y="1614" width="380" height="200" rx="14"/>
+  <text class="n" x="112" y="1646">ROLLAR</text>
+  <text class="s" x="112" y="1680">manager — to‘liq huquq</text>
+  <text class="s" x="112" y="1706">worker — davomat + task</text>
+  <text class="s" x="112" y="1732">staff — maslahat vazifalari</text>
+  <text class="s" x="112" y="1758">Admin — faqat menejer</text>
+  <text class="s" x="112" y="1784">Hozir: siz (bosh menejer)</text>
+
+  <rect class="box" x="510" y="1614" width="380" height="200" rx="14"/>
+  <text class="n" x="532" y="1646">MENEJER NIMA QILADI</text>
+  <text class="s" x="532" y="1680">Yangi hodimni tasdiqlaydi</text>
+  <text class="s" x="532" y="1706">Vazifa yaratadi / o‘chiradi</text>
+  <text class="s" x="532" y="1732">Isbotni tekshiradi</text>
+  <text class="s" x="532" y="1758">Hisobot va reytingni ko‘radi</text>
+  <text class="s" x="532" y="1784">Xodim faolligini kuzatadi</text>
+
+  <rect class="box" x="930" y="1614" width="380" height="200" rx="14"/>
+  <text class="n" x="952" y="1646">BOT O‘ZI NIMA QILADI</text>
+  <text class="s" x="952" y="1680">Xabarlarni so‘rab turadi (polling)</text>
+  <text class="s" x="952" y="1706">Vaqtni yozadi, eslatadi</text>
+  <text class="s" x="952" y="1732">Smena tugasa avtomatik yopadi</text>
+  <text class="s" x="952" y="1758">Guruhga xabar yuboradi</text>
+  <text class="s" x="952" y="1784">Ball hisoblaydi</text>
+</svg>
