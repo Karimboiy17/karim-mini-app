@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2230"/>
+      <stop offset="0.55" stop-color="#11161f"/>
+      <stop offset="1" stop-color="#080a0e"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#59657a"/>
+      <stop offset="0.45" stop-color="#2b3342"/>
+      <stop offset="1" stop-color="#151a23"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.35"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- rounded square background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <rect x="8" y="8" width="1008" height="1008" rx="216" fill="none" stroke="#2c3546" stroke-width="3"/>
+
+  <!-- ambient glow behind helmet -->
+  <ellipse cx="512" cy="560" rx="300" ry="250" fill="url(#glow)" filter="url(#soft)"/>
+
+  <!-- wings -->
+  <g fill="url(#wing)">
+    <path d="M352 486 C282 452 198 424 132 412 C204 460 268 506 344 552 Z" opacity="0.9"/>
+    <path d="M346 548 C266 528 184 520 122 534 C196 566 268 592 348 588 Z" opacity="0.75"/>
+    <path d="M358 592 C288 600 214 622 164 660 C238 642 306 630 366 622 Z" opacity="0.6"/>
+  </g>
+  <g fill="url(#wing)" transform="translate(1024,0) scale(-1,1)">
+    <path d="M352 486 C282 452 198 424 132 412 C204 460 268 506 344 552 Z" opacity="0.9"/>
+    <path d="M346 548 C266 528 184 520 122 534 C196 566 268 592 348 588 Z" opacity="0.75"/>
+    <path d="M358 592 C288 600 214 622 164 660 C238 642 306 630 366 622 Z" opacity="0.6"/>
+  </g>
+
+  <!-- helmet dome -->
+  <path d="M512 300 C406 300 338 382 338 486 L338 592 C338 636 362 660 406 666 L618 666 C662 660 686 636 686 592 L686 486 C686 382 618 300 512 300 Z"
+        fill="url(#steel)" stroke="#7c8aa3" stroke-width="4" stroke-opacity="0.55"/>
+
+  <!-- crest -->
+  <path d="M512 296 C470 296 440 308 420 330 C458 322 486 320 512 320 C538 320 566 322 604 330 C584 308 554 296 512 296 Z"
+        fill="#8fa0bb" opacity="0.75"/>
+
+  <!-- visor -->
+  <rect x="386" y="512" width="252" height="92" rx="46" fill="#0a1119" stroke="#0b1a24" stroke-width="4"/>
+  <rect x="398" y="524" width="228" height="68" rx="34" fill="url(#visor)"/>
+  <rect x="398" y="524" width="228" height="26" rx="13" fill="#e6feff" opacity="0.35"/>
+
+  <!-- visor glow -->
+  <ellipse cx="512" cy="558" rx="150" ry="46" fill="#22d3ee" opacity="0.28" filter="url(#soft)"/>
+
+  <!-- cheek lines -->
+  <g stroke="#0e131b" stroke-width="6" stroke-linecap="round" opacity="0.7">
+    <path d="M448 636 L512 700 L576 636"/>
+    <path d="M470 660 L512 704"/>
+    <path d="M554 660 L512 704"/>
+  </g>
+
+  <!-- rim light -->
+  <path d="M338 486 C338 382 406 300 512 300" fill="none" stroke="#9fe8ff" stroke-width="5" stroke-opacity="0.5" stroke-linecap="round"/>
+</svg>
