@@ -39,14 +39,14 @@
 <main id="app"></main>
 <div class="hint">Yangi qo‘shilganlar yuqorida turadi</div>
 
-<script src="data.js"></script>
 <script>
   const app = document.getElementById('app');
-  const items = (window.ITEMS || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
-  if (!items.length) {
-    app.innerHTML = '<div class="empty">Hozircha bo‘sh.</div>';
-  } else {
+  function render(items) {
+    if (!items.length) {
+      app.innerHTML = '<div class="empty">Hozircha bo‘sh.</div>';
+      return;
+    }
     app.innerHTML = items.map(it => `
       <section class="card">
         <div class="row">
@@ -59,6 +59,11 @@
       </section>
     `).join('');
   }
+
+  fetch('items.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(r => r.json())
+    .then(list => render(list.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''))))
+    .catch(() => { app.innerHTML = '<div class="empty">Yuklanmadi. ⌘R bosib qayta urinib ko‘ring.</div>'; });
 
   const tg = window.Telegram && window.Telegram.WebApp;
   if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor('#0d0f12'); tg.setBackgroundColor('#0d0f12'); } catch (e) {} }
